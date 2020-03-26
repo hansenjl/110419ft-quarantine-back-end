@@ -7,4 +7,9 @@ class ItemsController < ApplicationController
     item = Item.create(params.require(:item).permit(:name, :price, :image1, :image2))
     render json: item
   end
+
+  def show
+    item = Item.find(params[:id])
+    render json: item
+  end
 end
